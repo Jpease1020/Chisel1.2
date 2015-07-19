@@ -1,18 +1,10 @@
-a = ("You just *have* to try the cheesecake,\" he said. \"Ever since it appeared in
-**Food & Wine** this place has been packed every night.")
 
-# b = (\<p>
-#   "You just <em>have</em> to try the cheesecake," he said. "Ever since it appeared in
-#   <strong>Food &amp; Wine</strong> this place has been packed every night."
-# \</p>)
-
-# Paragraphs need to change out words surrounded by *'s with <em>word</em> and **'s with <strong>words</strong>
 class Paragraph
 
   attr_reader :chunk
 
-  def initialize(anythingIpassin)
-    @chunk = anythingIpassin.split(" ")
+  def initialize(chunk)
+    @chunk = chunk.split(" ")
     @cleaned = ""
   end
 
@@ -71,9 +63,6 @@ class Paragraph
     "\<p>\n\"" + chunk.join(" ") + "\n</p>"
   end
 
-  def to_s
-    chunk
-  end
 end
 
 #
