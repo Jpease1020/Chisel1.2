@@ -1,7 +1,8 @@
-gem 'minitest', '~> 5.2'    # => true
-require 'minitest/autorun'  # => true
-require 'minitest/pride'    # => true
-require '../lib/paragraph'  # ~> LoadError: cannot load such file -- ../lib/paragraph
+gem 'minitest', '~> 5.2'
+require 'minitest/autorun'
+require 'minitest/pride'
+require '../lib/paragraph'
+
 class ParagraphTest < Minitest::Test
 
   def test_it_is_a_paragraph

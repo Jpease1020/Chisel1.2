@@ -1,5 +1,4 @@
-
-class UnorderedList
+class OrderedList
 
   attr_reader :chunk
   def initialize(chunk)
@@ -18,13 +17,13 @@ class UnorderedList
 
   def list_maker
     splitter.map do |list|
-      list[0..1] = "<li>"
+      list[0..2] = "<li>"
       list + "</li>\n"
     end
   end
 
   def add_wrapper
-    "<ul>\n" + list_maker.join("") + "</ul>"
+    "<ol>\n" + list_maker.join("") + "</ol>"
   end
 
 end

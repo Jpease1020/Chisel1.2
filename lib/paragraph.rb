@@ -64,19 +64,3 @@ class Paragraph
   end
 
 end
-
-#
-# string = "You just *have* to try the cheesecake,\" he said. \"Ever since it appeared in
-# # # **Food & Wine** this place has been packed every night."
-# para = Paragraph.new(string)
-# # => NoMethodError: undefined method `convert_to_ems' for #<String:0x007ffb038281f0>
-#
-# a = para.convert_ampersand # => "You just *have* to try the cheesecake,\" he said. \"Ever since it appeared in **Food &amp; Wine** this place has been packed every night."
-# a.convert_to_ems # => NoMethodError: undefined method `convert_to_ems' for #<String:0x007faf6c87c300>
-#
-# # ~> NoMethodError
-
-# ~> NoMethodError
-# ~> undefined method `convert_to_ems' for #<String:0x007ffb038281f0>
-# ~>
-# ~> /Users/justinpease/Turing_All/Module_1.2/Projects/chisel1.2/lib/paragraph.rb:74:in `<main>'
