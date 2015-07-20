@@ -41,7 +41,9 @@ class UnorderedListTest < Minitest::Test
 <li>Sushi</li>
 <li>Barbeque</li>
 <li>Mexican</li>
-</ul>", result
+</ul>
+
+", result
   end
 
   def test_it_does_everything
@@ -54,6 +56,8 @@ class UnorderedListTest < Minitest::Test
 <li>Sushi</li>
 <li>Barbeque</li>
 <li>Mexican</li>
-</ul>", result
+</ul>
+
+", result
   end
 end

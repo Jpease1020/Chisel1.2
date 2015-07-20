@@ -1,9 +1,9 @@
 
 class UnorderedList
 
-  attr_reader :chunk
-  def initialize(chunk)
-    @chunk = chunk
+  attr_reader :chunks
+  def initialize(chunks)
+    @chunks = chunks
   end
 
   def process
@@ -13,7 +13,7 @@ class UnorderedList
   end
 
   def splitter
-    chunk.split("\n")
+    chunks.split("\n")
   end
 
   def list_maker
@@ -24,7 +24,7 @@ class UnorderedList
   end
 
   def add_wrapper
-    "<ul>\n" + list_maker.join("") + "</ul>"
+    "<ul>\n" + list_maker.join("") + "</ul>\n\n"
   end
 
 end

@@ -1,10 +1,10 @@
 
 class Paragraph
 
-  attr_reader :chunk
+  attr_reader :chunks
 
-  def initialize(chunk)
-    @chunk = chunk.split(" ")
+  def initialize(chunks)
+    @chunks = chunks.split(" ")
     @cleaned = ""
   end
 
@@ -16,7 +16,7 @@ class Paragraph
   end
 
   def convert_to_strong
-      chunk.map! do |word|
+      chunks.map! do |word|
       if word.end_with?("**")
           word[-2..-1] = "</strong>"
           word
@@ -31,7 +31,7 @@ class Paragraph
   end
 
   def convert_to_ems
-    chunk.map! do |word|
+    chunks.map! do |word|
       if word.start_with?("*")
         replace_beginning_em(word)
       end
@@ -54,13 +54,13 @@ class Paragraph
   end
 
   def convert_ampersand
-    chunk.map! do |word|
+    chunks.map! do |word|
       word.gsub("&", "&amp;")
     end.join(" ")
   end
 
   def add_wrapper
-    "\<p>\n\"" + chunk.join(" ") + "\n</p>"
+    "\<p>\n\"" + chunks.join(" ") + "\n</p>\n\n"
   end
 
 end

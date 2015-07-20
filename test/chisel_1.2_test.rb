@@ -34,10 +34,7 @@ You just *have* to
 1. Barbeque"
     chisel = Chisel.new(markdown)
     result = chisel.chiseler
-    # assert result[0]
     assert "<p>\n\"You just <em>have</em> to\n</p>", result[1]
-    # assert result[2]
-    # assert result[3]
   end
 
   def test_it_converts_chunks_with_full_markdown
@@ -64,7 +61,6 @@ My favorite cuisines are:
 
     chisel = Chisel.new(markdown)
     result = chisel.chiseler
-    # assert result[0]
     assert "<h1>My Life in Desserts</h1>
 
 <h2>Chapter 1: The Beginning</h2>
@@ -92,7 +88,7 @@ My favorite cuisines are:
   <li>Sushi</li>
   <li>Barbeque</li>
   <li>Mexican</li>
-</ol>", result.join(" ")
+</ol>", result
 
   end
 
