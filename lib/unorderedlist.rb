@@ -1,4 +1,3 @@
-
 class UnorderedList
 
   attr_reader :chunks

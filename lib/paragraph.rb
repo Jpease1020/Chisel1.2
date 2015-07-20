@@ -1,4 +1,3 @@
-
 class Paragraph
 
   attr_reader :chunks
@@ -60,7 +59,7 @@ class Paragraph
   end
 
   def add_wrapper
-    "\<p>\n\"" + chunks.join(" ") + "\n</p>\n\n"
+    "\<p>\n" + chunks.join(" ") + "\n</p>\n\n"
   end
 
 end
