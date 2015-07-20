@@ -34,17 +34,29 @@ You just *have* to
 1. Barbeque"
     parser = Parser.new(markdown)
     result = parser.converter
-    assert "<p>\n\"You just <em>have</em> to\n</p>", result[1]
+    assert_equal "<h1>My Life</h1>
+
+<p>
+You just <em>have</em> to
+</p>
+
+<ul>
+<li>Sushi</li>
+</ul>
+
+<ol>
+<li>Barbeque</li>
+</ol>
+
+", result
   end
 
   def test_it_converts_chunks_with_full_markdown
-    skip
     markdown = "# My Life in Desserts
 
-## Chapter 1: The Beginning"
+## Chapter 1: The Beginning
 
-"You just *have* to try the cheesecake,\" he said. \"Ever since it appeared in
-**Food & Wine** this place has been packed every night.
+\"You just *have* to try the cheesecake,\" he said. \"Ever since it appeared in **Food & Wine** this place has been packed every night.
 
 My favorite cuisines are:
 
@@ -58,37 +70,9 @@ My favorite cuisines are:
 2. Barbeque
 3. Mexican"
 
-
     parser = Parser.new(markdown)
     result = parser.converter
-    assert "<h1>My Life in Desserts</h1>
-
-<h2>Chapter 1: The Beginning</h2>
-
-<p>
-  \"You just <em>have</em> to try the cheesecake,\" he said. \"Ever since it appeared in
-  <strong>Food &amp; Wine</strong> this place has been packed every night.\"
-</p>
-
-<p>
-  My favorite cuisines are:
-</p>
-
-<ul>
-  <li>Sushi</li>
-  <li>Barbeque</li>
-  <li>Mexican</li>
-</ul>
-
-<p>
-  My favorite cuisines are:
-</p>
-
-<ol>
-  <li>Sushi</li>
-  <li>Barbeque</li>
-  <li>Mexican</li>
-</ol>", result
+    assert_equal "<h1>My Life in Desserts</h1>\n\n<h2>Chapter 1: The Beginning</h2>\n\n<p>\n\"You just <em>have</em> to try the cheesecake,\" he said. \"Ever since it appeared in <strong>Food &amp; Wine</strong> this place has been packed every night.\n</p>\n\n<p>\nMy favorite cuisines are:\n</p>\n\n<ul>\n<li>Sushi</li>\n<li>Barbeque</li>\n<li>Mexican</li>\n</ul>\n\n<p>\nMy favorite cuisines are:\n</p>\n\n<ol>\n<li>Sushi</li>\n<li>Barbeque</li>\n<li>Mexican</li>\n</ol>\n\n", result
 
   end
 

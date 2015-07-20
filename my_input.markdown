@@ -15,4 +15,4 @@ My favorite cuisines are:
 
 1. Sushi
 2. Barbeque
-3. Mexican"  
+3. Mexican

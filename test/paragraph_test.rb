@@ -6,13 +6,10 @@ require '../lib/paragraph'
 class ParagraphTest < Minitest::Test
 
   def test_it_is_a_paragraph
-    skip
     chunk = "You just *have* to try the cheesecake,\" he said. \"Ever since it appeared in
     **Food & Wine** this place has been packed every night."
     para = Paragraph.new(chunk)
-    refute para.is_a?(Header)
-    refute para.is_a?(OrderedList)
-    refute para.is_a?(List)
+    assert para.is_a?(Paragraph)
   end
 
   def test_can_split_chunk
@@ -61,14 +58,14 @@ class ParagraphTest < Minitest::Test
     chunk = "You just *have to try* the cheesecake."
     para = Paragraph.new(chunk)
     result = para.add_wrapper
-    assert_equal "\<p>\n\"You just *have to try* the cheesecake.\n</p>\n\n", result
+    assert_equal "\<p>\n" + "You just *have to try* the cheesecake.\n</p>\n\n", result
   end
 
   def test_can_convert_a_paragraph
     chunk = "You just *have* to try the cheesecake,\" he said. \"Ever since it appeared in **Food & Wine** this place has been packed every night."
     para = Paragraph.new(chunk)
     result = para.process
-    assert_equal "<p>\n\"You just <em>have</em> to try the cheesecake,\" he said. \"Ever since it appeared in <strong>Food &amp; Wine</strong> this place has been packed every night.\n</p>\n\n", result
+    assert_equal "<p>\n" + "You just <em>have</em> to try the cheesecake,\" he said. \"Ever since it appeared in <strong>Food &amp; Wine</strong> this place has been packed every night.\n</p>\n\n", result
   end
 
 

@@ -23,7 +23,7 @@ class OrderedList
   end
 
   def add_wrapper
-    "<ol>\n" + list_maker.join("") + "</ol>\n\n"
+    "<ol>\n" + list_maker.join + "</ol>\n\n"
   end
 
 end

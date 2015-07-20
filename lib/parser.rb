@@ -29,4 +29,4 @@ class Parser
     end.join
   end
 
-end  
+end
